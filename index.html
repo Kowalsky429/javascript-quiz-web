@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>quizWeb</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/04d515f75a.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./styles/style.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+			integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+	</head>
+	<body>
+		<section class="container">
+			<!-- quiz menu start -->
+			<section class="startMenu">
+				<h2 class="title">quiz<span>Web</span></h2>
+				<p class="target">press to continue adventure</p>
+			</section>
+			<!-- quiz category menu-->
+			<section class="categoryMenu">
+				<article class="type">
+					<p class="title">IT TECHNOLOGY</p>
+					<div class="categories">
+						<section
+							class="category"
+							data-category="0"
+							data-title="PROGRAMM<span>ING</span>"
+							data-news="Programming isn't about what you know it's about what you can figure out"
+						>
+							<p>PROGRAMMING</p>
+							<div class="mark"></div>
+						</section>
+						<section
+							class="category"
+							data-category="1"
+							data-title="IT<span>DEVICES</span>"
+							data-news="Some devices are smart, unlike their owners."
+						>
+							<p>IT DEVICES</p>
+							<div class="mark"></div>
+						</section>
+						<section
+							class="category"
+							data-category="2"
+							data-title="NET<span>WORK</span>"
+							data-news="Networking is an investment in your business"
+						>
+							<p>NETWORK</p>
+							<div class="mark"></div>
+						</section>
+					</div>
+				</article>
+				<article class="type">
+					<p class="title">MATH QUEST</p>
+					<div class="categories">
+						<section
+							class="category"
+							data-category="3"
+							data-title="CALC<span>ULATIONS</span>"
+							data-news="I've done the calculation and your chances of winning the lottery are identical whether you play or not"
+						>
+							<p>CALCULATIONS</p>
+							<div class="mark"></div>
+						</section>
+						<section
+							class="category"
+							data-category="4"
+							data-title="ANALY<span>TYCS</span>"
+							data-news="The goal is to turn data into information, and information into insight."
+						>
+							<p>ANALYTYCS</p>
+							<div class="mark"></div>
+						</section>
+						<section
+							class="category"
+							data-category="5"
+							data-title="TRY<span>GONOMETRY</span>"
+							data-news="Can you imagine young people nowadays making a study of trigonometry for the fun of it? "
+						>
+							<p>TRYGONOMETRY</p>
+							<div class="mark"></div>
+						</section>
+					</div>
+				</article>
+				<article class="type">
+					<p class="title">OTHER</p>
+					<div class="categories" data-type="3">
+						<section
+							class="category"
+							data-category="6"
+							data-title="BREAKTROUGH<span>MOMENTS</span>"
+							data-news="The value of an idea lies in the using of it. ..."
+						>
+							<p>BREAKTROUGH MOMENTS</p>
+							<div class="mark"></div>
+						</section>
+						<section
+							class="category"
+							data-category="7"
+							data-title="VIDEO<span>GAMES</span>"
+							data-news="The Gameboy was the First Game in Space"
+						>
+							<p>VIDEO GAMES</p>
+							<div class="mark"></div>
+						</section>
+						<section
+							class="category"
+							data-category="8"
+							data-title="E<span>SPORT</span>"
+							data-news="Almost Half-a-Billion Watched esports in 2020"
+						>
+							<p>E SPORT</p>
+							<div class="mark"></div>
+						</section>
+					</div>
+				</article>
+			</section>
+			<!-- quizgame -->
+			<div class="exitBtn" data-currentId="">LEAVE</div>
+			<section class="quizGame">
+				<header>
+					<div class="averageCounter"></div>
+					<div class="name">
+						<p class="title"></p>
+						<p class="news"></p>
+					</div>
+					<div class="scoreCounter"></div>
+				</header>
+				<div class="cards"></div>
+			</section>
+		</section>
+		<script type="module" src="./scripts/app.js"></script>
+	</body>
+</html>

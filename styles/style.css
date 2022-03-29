@@ -1,0 +1,279 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Ubuntu, sans-serif;
+	color: #fff;
+	user-select: none;
+}
+html {
+	font-size: 17px;
+}
+.category,
+.exitBtn,
+.option,
+.startMenu {
+	cursor: pointer;
+}
+.container {
+	display: flex;
+	flex-direction: colum;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	background: linear-gradient(45deg, #5e548e, #cefdff);
+	width: 100%;
+	min-height: 100vh;
+	padding: 2rem 0;
+	overflow-x: hidden;
+}
+.container .startMenu {
+	text-align: center;
+}
+.container .startMenu .title {
+	position: relative;
+	font: bold 4rem/2rem Ubuntu;
+	color: #fff;
+	text-shadow: 2px 4px #5e548e;
+	margin-bottom: 2.5rem;
+}
+.container .startMenu .title span {
+	color: #5e548e;
+	text-shadow: 2px 2px #cefdff;
+}
+.container .startMenu .target {
+	font-weight: 700;
+	animation: slowPopUp 0.5s ease infinite alternate-reverse;
+}
+.container .categoryMenu,
+.container .quizGame {
+	width: 100vw;
+	display: none;
+	padding: 1rem 3rem;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	transform-origin: left;
+	border: 3px solid #cefdff;
+}
+.container .categoryMenu .type .title,
+.container .quizGame .type .title {
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #cefdff;
+}
+.container .categoryMenu .type .categories,
+.container .quizGame .type .categories {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 2em 0;
+	flex-wrap: wrap;
+}
+.container .categoryMenu .type .categories .category,
+.container .quizGame .type .categories .category {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+	width: 30%;
+	min-width: 300px;
+	height: 120px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	font-weight: 500;
+	font-size: 1.2rem;
+	flex: 1 0 auto;
+}
+.container .categoryMenu .type .categories .category p,
+.container .quizGame .type .categories .category p {
+	pointer-events: none;
+}
+.container .categoryMenu .type .categories .category .mark,
+.container .quizGame .type .categories .category .mark {
+	position: absolute;
+	bottom: 6px;
+	right: 6px;
+	color: rgba(255, 255, 255, 0.2);
+	font-size: 1rem;
+}
+.container .categoryMenu .type .categories .category:hover,
+.container .quizGame .type .categories .category:hover {
+	box-shadow: -2px -2px 1px #cefdff;
+}
+.container .categoryMenu .type .categories .categoryGood,
+.container .quizGame .type .categories .categoryGood {
+	box-shadow: -2px -2px 1px #91d7ff;
+}
+.container .categoryMenu .type .categories[data-type='3'],
+.container .quizGame .type .categories[data-type='3'] {
+	margin-top: 2em;
+	margin-bottom: 0;
+}
+.container .quizGame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	display: none;
+	position: relative;
+	transform-origin: right;
+}
+.container .quizGame header {
+	text-align: center;
+	margin: 1rem 0 2rem;
+	display: flex;
+}
+.container .quizGame header .title {
+	position: relative;
+	font: bold 2rem/2rem Ubuntu;
+	color: #fff;
+	text-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+}
+.container .quizGame header .news {
+	font-size: 1rem;
+	font-weight: 500;
+}
+.container .quizGame .cards {
+	width: 100%;
+}
+.container .quizGame .cards .card {
+	position: relative;
+	min-height: 210px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 8px;
+	background: rgba(0, 0, 0, 0.1);
+	font-size: 1.1rem;
+}
+.container .quizGame .cards .card:last-child {
+	margin-bottom: 0;
+}
+.container .quizGame .cards .card .index {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.8rem;
+	color: rgba(255, 255, 255, 0.2);
+}
+.container .quizGame .cards .card .question {
+	width: 40%;
+}
+.container .quizGame .cards .card .options {
+	text-align: right;
+}
+.container .quizGame .cards .card .options .option {
+	margin-bottom: 1rem;
+	transition: color 0.2s ease;
+}
+.container .quizGame .cards .card .options .option:hover {
+	color: #cefdff;
+}
+.container .quizGame .cards .card .options .option:last-child {
+	margin-bottom: 0;
+}
+.container .quizGame .cards .card .options .wrong {
+	color: #ff4501;
+	font-weight: 500;
+}
+.container .quizGame .cards .card .options .showCorrect {
+	color: #0cf;
+	font-weight: 500;
+}
+.container .quizGame .cards .choosenCard {
+	background: linear-gradient(45deg, #89dfdf, #5e548e);
+	background: rgba(255, 255, 255, 0.02);
+}
+.exitBtn {
+	opacity: 0;
+	display: none;
+	position: fixed;
+	top: 0.5rem;
+	left: 0.5rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	border: 3px solid rgba(255, 255, 255, 0.2);
+	padding: 3px 6px;
+	color: rgba(255, 255, 255, 0.2);
+	border-radius: 6px;
+	transition: all 0.2s ease;
+	z-index: 999;
+}
+.resultsTable {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	max-width: 1300px;
+	border-radius: 8px;
+	padding: 0.5rem 2rem;
+	font-size: 1.1rem;
+	background: rgba(0, 0, 0, 0.1);
+	text-align: justify;
+}
+.resultsTable .good,
+.resultsTable .wrong {
+	min-width: 350px;
+	width: 40%;
+	margin: 1rem 0;
+}
+.resultsTable .good .title,
+.resultsTable .wrong .title {
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+.resultsTable .good p,
+.resultsTable .wrong p {
+	line-height: 1.8rem;
+	max-width: 300px;
+}
+.resultsTable .wrong p:not(.title) {
+	color: #ff4501;
+}
+.resultsTable .good p:not(.title) {
+	color: #0cf;
+}
+.container .categoryMenu,
+.container .quizGame {
+	width: 100%;
+	max-width: 1300px;
+}
+@keyframes slowPopUp {
+	to {
+		transform: translateY(20px);
+	}
+}
+@media (max-width: 850px) {
+	html {
+		font-size: 15px;
+	}
+	.quizGame {
+		padding: 1rem 0 !important;
+	}
+	.quizGame .cards .card {
+		min-width: 350px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	.quizGame .cards .card .question {
+		width: 100% !important;
+		text-align: left;
+		margin-bottom: 2rem;
+		font-weight: 500;
+	}
+	.quizGame .cards .card .options {
+		width: 100%;
+	}
+	.quizGame .cards .card .options .option {
+		text-align: left;
+	}
+}
